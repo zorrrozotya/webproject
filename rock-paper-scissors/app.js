@@ -1,9 +1,8 @@
-// Prevent animation on load
+
 setTimeout(() => {
   document.body.classList.remove("preload");
 }, 500);
 
-// DOM
 const btnRules = document.querySelector(".rules-btn");
 const btnClose = document.querySelector(".close-btn");
 const modalRules = document.querySelector(".modal");
@@ -37,7 +36,6 @@ let score = 0;
 const scoreNumberEnemy = document.querySelector(".score__number-enemy");
 let scoreEnemy = 0;
 
-// Game Logic
 choiceButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const choiceName = button.dataset.choice;
@@ -106,7 +104,6 @@ function keepScoreEnemy(point) {
   scoreNumberEnemy.innerText = scoreEnemy;
 }
 
-// Play Again
 playAgainBtn.addEventListener("click", () => {
   gameDiv.classList.toggle("hidden");
   resultsDiv.classList.toggle("hidden");
@@ -119,12 +116,4 @@ playAgainBtn.addEventListener("click", () => {
   resultText.innerText = "";
   resultWinner.classList.toggle("hidden");
   resultsDiv.classList.toggle("show-winner");
-});
-
-// Show/Hide Rules
-btnRules.addEventListener("click", () => {
-  modalRules.classList.toggle("show-modal");
-});
-btnClose.addEventListener("click", () => {
-  modalRules.classList.toggle("show-modal");
 });
